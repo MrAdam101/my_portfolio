@@ -7,11 +7,31 @@ st.set_page_config(
     layout="centered"
 )
 
-# --- Custom Styling ---
+# --- Custom CSS ---
 st.markdown("""
     <style>
+        .nav-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+        .stButton button {
+            background-color: #2E86C1;
+            color: white;
+            border-radius: 8px;
+            font-size: 16px;
+            padding: 0.5em 1em;
+            border: none;
+            transition: 0.3s;
+        }
+        .stButton button:hover {
+            background-color: #1B4F72;
+            color: #f1f1f1;
+            transform: scale(1.05);
+        }
         .main-title {
-            font-size: 48px;
+            font-size: 44px;
             font-weight: bold;
             text-align: center;
             color: #2E86C1;
@@ -26,23 +46,31 @@ st.markdown("""
             text-align: center;
             font-size: 18px;
             margin-top: 40px;
-        }
-        .stButton button {
-            display: block;
-            margin: 10px auto;
-            border-radius: 10px;
-            font-size: 18px;
-            background-color: #2E86C1;
-            color: white;
-            padding: 0.6em 1.4em;
-            transition: 0.3s;
-        }
-        .stButton button:hover {
-            background-color: #1B4F72;
-            color: #f1f1f1;
+            color: #333;
         }
     </style>
 """, unsafe_allow_html=True)
+
+# --- Top Navigation Bar ---
+st.markdown('<div class="nav-buttons">', unsafe_allow_html=True)
+col1, col2, col3, col4 = st.columns(4)
+
+with col1:
+    if st.button("🏠 Home"):
+        st.switch_page("main.py")
+
+with col2:
+    if st.button("💻 Coding"):
+        st.switch_page("pages/1_Coding.py")
+
+with col3:
+    if st.button("🎨 Art"):
+        st.switch_page("pages/2_Art.py")
+
+with col4:
+    if st.button("🙋‍♂️ About Me"):
+        st.switch_page("pages/3_About_Me.py")
+st.markdown('</div>', unsafe_allow_html=True)
 
 # --- Main Content ---
 st.markdown('<h1 class="main-title">Welcome to My Portfolio 🌟</h1>', unsafe_allow_html=True)
@@ -52,27 +80,8 @@ st.markdown("""
 <div class="section">
 I'm <b>Adam Conroy</b> — a coder, artist, and creator living in South Korea 🇰🇷.<br>
 I build creative digital tools and art that bridge imagination with technology.<br><br>
-</div>
-""", unsafe_allow_html=True)
-
-# --- Navigation Buttons ---
-col1, col2, col3 = st.columns(3)
-
-with col1:
-    if st.button("💻 Coding"):
-        st.switch_page("pages/1_Coding.py")
-
-with col2:
-    if st.button("🎨 Art"):
-        st.switch_page("pages/2_Art.py")
-
-with col3:
-    if st.button("🙋‍♂️ About Me"):
-        st.switch_page("pages/3_About_Me.py")
-
-st.markdown("""
-<div class="section">
-✨ Use the sidebar or the buttons above to explore my coding projects, artwork, and story.<br>
+✨ Explore my projects, art, and story using the buttons above or the sidebar.<br>
 Let's create something amazing together!
 </div>
 """, unsafe_allow_html=True)
+
