@@ -1,13 +1,13 @@
 import streamlit as st
 
-# --- Page Setup ---
+# -------------------- PAGE CONFIG --------------------
 st.set_page_config(
     page_title="Adam Conroy | Portfolio",
     page_icon="🌐",
     layout="centered"
 )
 
-# --- NAVIGATION BAR FUNCTION ---
+# -------------------- NAVIGATION BAR FUNCTION --------------------
 def top_navbar():
     st.markdown("""
         <style>
@@ -39,23 +39,25 @@ def top_navbar():
 
     with col1:
         if st.button("🏠 Home"):
-            st.switch_page("main.py")
+            st.experimental_rerun()
+
     with col2:
         if st.button("💻 Coding"):
-            st.switch_page("pages/1_Coding.py")
+            st.switch_page("pages/1_Coding")
+
     with col3:
         if st.button("🎨 Art"):
-            st.switch_page("pages/2_Art.py")
+            st.switch_page("pages/2_Art")
+
     with col4:
         if st.button("🙋‍♂️ About Me"):
-            st.switch_page("pages/3_About_Me.py")
+            st.switch_page("pages/3_About_Me")
+
     st.markdown('</div>', unsafe_allow_html=True)
 
-
-# --- NAVIGATION BAR ---
+# -------------------- MAIN CONTENT --------------------
 top_navbar()
 
-# --- MAIN CONTENT ---
 st.markdown("""
 <h1 style='text-align:center; color:#2E86C1;'>Welcome to My Portfolio 🌟</h1>
 <p style='text-align:center; font-size:20px; color:#555;'>A blend of Creativity 🎨 + Code 💻</p>
