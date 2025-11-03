@@ -48,11 +48,9 @@ st.markdown("""
 st.markdown('<h1 class="main-title">Welcome to My Portfolio 🌟</h1>', unsafe_allow_html=True)
 st.markdown('<p class="subtitle">A blend of Creativity 🎨 + Code 💻</p>', unsafe_allow_html=True)
 
-st.image("assets/profile.jpg", width=250, caption="Adam Conroy")
-
 st.markdown("""
 <div class="section">
-I'm <b>Adam</b> — a coder, artist, and creator living in South Korea 🇰🇷.<br>
+I'm <b>Adam Conroy</b> — a coder, artist, and creator living in South Korea 🇰🇷.<br>
 I build creative digital tools and art that bridge imagination with technology.<br><br>
 </div>
 """, unsafe_allow_html=True)
@@ -74,7 +72,7 @@ with col3:
 
 st.markdown("""
 <div class="section">
-✨ Scroll through my projects and artwork using the sidebar or buttons above.<br>
+✨ Use the sidebar or the buttons above to explore my coding projects, artwork, and story.<br>
 Let's create something amazing together!
 </div>
 """, unsafe_allow_html=True)
