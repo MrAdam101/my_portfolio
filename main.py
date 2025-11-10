@@ -34,12 +34,12 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # --- HEADER ---
-st.title("🎨 Adam Conroy | Creative Coder & Artist")
-st.subheader("Welcome to my interactive portfolio built with Streamlit!")
+st.title("🎨 Adam Conroy | Creative Coder & Artist portfolio ")
+st.subheader("Welcome to my interactive portfolio by me for you")
 st.write(
     """
     Explore my **coding projects**, **artwork**, and learn more **about me** using the sidebar.  
-    This portfolio showcases my passion for blending creativity and technology.
+    This portfolio showcases my passion for blending creativity and technology as well as showcasing my skills in both code and art.
     """
 )
 
@@ -68,4 +68,5 @@ with col2:
 
 st.divider()
 st.info("💡 Tip: Use the sidebar to navigate between pages!")
+
 
