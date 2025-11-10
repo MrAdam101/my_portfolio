@@ -66,43 +66,45 @@ st.write(
     """
 )
 
-# --- CENTERED BOXES ---
-st.markdown("""
-<div class="box-container">
-
-    <div class="box">
-        <a href="/" target="_self">
-            <h3>🏠 Main</h3>
-            <p>Return to the main landing page.</p>
-        </a>
+# --- CLICKABLE BOXES (rendered properly) ---
+st.markdown(
+    """
+    <div class="box-container">
+        <div class="box">
+            <a href="/" target="_self">
+                <h3>🏠 Main</h3>
+                <p>Return to the main landing page.</p>
+            </a>
+        </div>
+        <div class="box">
+            <a href="1_Coding" target="_self">
+                <h3>💻 Code</h3>
+                <p>Explore my coding projects and apps.</p>
+            </a>
+        </div>
+        <div class="box">
+            <a href="2_Art" target="_self">
+                <h3>🎨 Artwork</h3>
+                <p>View my digital and AI artwork gallery.</p>
+            </a>
+        </div>
+        <div class="box">
+            <a href="3_About_Me" target="_self">
+                <h3>🙋 About Me</h3>
+                <p>Learn more about who I am and what I do.</p>
+            </a>
+        </div>
     </div>
-
-    <div class="box">
-        <a href="/1_Coding" target="_self">
-            <h3>💻 Code</h3>
-            <p>Explore my coding projects and apps.</p>
-        </a>
-    </div>
-
-    <div class="box">
-        <a href="/2_Art" target="_self">
-            <h3>🎨 Artwork</h3>
-            <p>View my digital and AI artwork gallery.</p>
-        </a>
-    </div>
-
-    <div class="box">
-        <a href="/3_About_Me" target="_self">
-            <h3>🙋 About Me</h3>
-            <p>Learn more about who I am and what I do.</p>
-        </a>
-    </div>
-
-</div>
-""", unsafe_allow_html=True)
+    """,
+    unsafe_allow_html=True
+)
 
 st.divider()
 st.info("💡 Tip: Use the sidebar or the boxes above to navigate between pages!")
 
 
+         
+    
+
   
+
