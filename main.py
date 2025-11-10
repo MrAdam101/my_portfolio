@@ -2,7 +2,7 @@ import streamlit as st
 
 st.set_page_config(page_title="Adam Conroy | Portfolio", page_icon="🎨", layout="wide")
 
-# --- DARK THEME STYLING ---
+# --- STYLING ---
 st.markdown("""
 <style>
 body {
@@ -13,7 +13,6 @@ body {
 }
 [data-testid="stAppViewContainer"] {
     background-color: #000000;
-    color: white;
 }
 [data-testid="stHeader"] {
     background: none;
@@ -26,42 +25,43 @@ h1, h2, h3, h4, h5, h6, p, li, div, span {
     text-align: center !important;
 }
 a {
-    color: #00BFFF !important;
     text-decoration: none !important;
 }
-a:hover {
-    color: #1E90FF !important;
-}
+
+/* --- BUTTON CONTAINER --- */
 .button-container {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 30px;
+    gap: 35px;
     margin-top: 60px;
 }
+
+/* --- BUTTON STYLE --- */
 .image-button {
-    background-color: #111111;
-    border: 3px solid #00BFFF;
-    border-radius: 25px;
-    width: 150px;
-    height: 150px;
+    background: linear-gradient(180deg, #56CCF2, #2F80ED);  /* light-blue glossy gradient */
+    border: none;
+    border-radius: 40px;
+    padding: 18px 45px;
+    color: white;
+    font-size: 1.3rem;
+    font-weight: 700;
     display: flex;
-    justify-content: center;
     align-items: center;
-    transition: 0.3s;
-    box-shadow: 0 0 10px rgba(0,191,255,0.2);
+    justify-content: center;
+    box-shadow: 0 5px 20px rgba(0, 191, 255, 0.3);
+    transition: all 0.3s ease-in-out;
 }
 .image-button:hover {
-    transform: scale(1.1);
-    border-color: #FF4500;
-    box-shadow: 0 0 25px #FF4500;
-    background-color: #1a1a1a;
+    background: linear-gradient(180deg, #2F80ED, #1B6FF0);
+    box-shadow: 0 0 25px rgba(0,191,255,0.8);
+    transform: scale(1.08);
 }
 .image-button h3 {
     margin: 0;
     font-size: 1.3rem;
-    font-weight: 700;
     color: white;
+    font-weight: 700;
 }
 </style>
 """, unsafe_allow_html=True)
@@ -76,38 +76,28 @@ st.write(
     """
 )
 
-# --- SMALL EMOJI BUTTONS ---
-st.markdown(
-"""<div class="button-container">
+# --- BUTTONS ---
+st.markdown("""
+<div class="button-container">
 
-<div class="image-button">
-  <a href="/" target="_self">
-    <h3>🏠 Main</h3>
-  </a>
+<a href="/" target="_self" class="image-button">
+  <h3>🏠 Main</h3>
+</a>
+
+<a href="1_Coding" target="_self" class="image-button">
+  <h3>💻 Code</h3>
+</a>
+
+<a href="2_Art" target="_self" class="image-button">
+  <h3>🎨 Art</h3>
+</a>
+
+<a href="3_About_Me" target="_self" class="image-button">
+  <h3>🙋 About Me</h3>
+</a>
+
 </div>
-
-<div class="image-button">
-  <a href="1_Coding" target="_self">
-    <h3>💻 Code</h3>
-  </a>
-</div>
-
-<div class="image-button">
-  <a href="2_Art" target="_self">
-    <h3>🎨 Art</h3>
-  </a>
-</div>
-
-<div class="image-button">
-  <a href="3_About_Me" target="_self">
-    <h3>🙋 About Me</h3>
-  </a>
-</div>
-
-</div>""",
-unsafe_allow_html=True
-)
+""", unsafe_allow_html=True)
 
 st.divider()
-st.info("💡 Hover over any button to see the glowing border effect!")
-
+st.info("💡 Hover over the buttons to see the glowing blue effect!")
