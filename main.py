@@ -40,17 +40,18 @@ a:hover {
 }
 .image-button {
     background-color: #111111;
-    border: 2px solid #00BFFF;
+    border: 4px solid #00BFFF; /* thicker border */
     border-radius: 20px;
-    padding: 20px;
-    width: 220px;
+    padding: 25px;
+    width: 230px;
     transition: 0.3s;
     text-align: center;
 }
 .image-button:hover {
-    transform: scale(1.05);
+    transform: scale(1.07);
     background-color: #1a1a1a;
-    border-color: #1E90FF;
+    border-color: #FF4500; /* hover color = orange/red glow */
+    box-shadow: 0 0 20px #FF4500;
 }
 .image-button img {
     width: 150px;
@@ -107,4 +108,4 @@ unsafe_allow_html=True
 )
 
 st.divider()
-st.info("💡 Click an image above to explore different sections of my portfolio!")
+st.info("💡 Hover over any image button to see the glowing border effect!")
