@@ -69,26 +69,26 @@ st.write(
 )
 
 # --- BUTTON LAYOUT (WORKING NAVIGATION) ---
-# --- BUTTON LAYOUT (WORKING NAVIGATION) ---
 col1, col2, col3, col4 = st.columns(4, gap="large")
 
 with col1:
-    # Main button does not navigate, just visual
     st.button("🏠 Main", use_container_width=True)
 
 with col2:
     if st.button("💻 Code", use_container_width=True):
-        st.switch_page("pages/1_Coding.py")
+        st.switch_page("1_Coding")
 
 with col3:
     if st.button("🎨 Art", use_container_width=True):
-        st.switch_page("pages/2_Art.py")
+        st.switch_page("2_Art")
 
 with col4:
     if st.button("🙋 About Me", use_container_width=True):
-        st.switch_page("pages/3_About_Me.py")
+        st.switch_page("3_About_Me")
+
 
    
+
 
 
 
