@@ -2,6 +2,16 @@ import streamlit as st
 
 st.set_page_config(page_title="Adam Conroy | Portfolio", page_icon="🎨", layout="wide")
 
+# --- HIDE STREAMLIT DEFAULT SIDEBAR AND MENU ---
+st.markdown("""
+    <style>
+        [data-testid="stSidebar"] {visibility: hidden;}
+        [data-testid="stSidebarNav"] {display: none;}
+        [data-testid="stToolbar"] {display: none;}
+        footer {visibility: hidden;}
+    </style>
+""", unsafe_allow_html=True)
+
 # --- STYLING ---
 st.markdown("""
 <style>
@@ -14,18 +24,10 @@ body {
 [data-testid="stAppViewContainer"] {
     background-color: #000000;
 }
-[data-testid="stHeader"] {
-    background: none;
-}
-[data-testid="stSidebar"] {
-    background-color: #111111;
-}
 h1, h2, h3, h4, h5, h6, p, li, div, span {
     color: white !important;
     text-align: center !important;
 }
-
-/* --- BUTTON CONTAINER --- */
 .button-container {
     display: flex;
     justify-content: center;
@@ -33,8 +35,6 @@ h1, h2, h3, h4, h5, h6, p, li, div, span {
     gap: 35px;
     margin-top: 60px;
 }
-
-/* --- BUTTON STYLE --- */
 .glow-button {
     background: linear-gradient(180deg, #56CCF2, #2F80ED);
     border: none;
@@ -68,7 +68,7 @@ st.write(
     """
 )
 
-# --- BUTTON LAYOUT (WORKING NAVIGATION) ---
+# --- NAVIGATION BUTTONS ---
 col1, col2, col3, col4 = st.columns(4, gap="large")
 
 with col1:
@@ -85,10 +85,3 @@ with col3:
 with col4:
     if st.button("🙋 About Me", use_container_width=True):
         st.switch_page("3_About_Me")
-
-
-   
-
-
-
-
