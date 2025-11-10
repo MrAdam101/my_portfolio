@@ -68,22 +68,25 @@ st.write(
     """
 )
 
-# --- BUTTON LAYOUT (REAL STREAMLIT NAVIGATION) ---
+# --- BUTTON LAYOUT (WORKING NAVIGATION) ---
 col1, col2, col3, col4 = st.columns(4, gap="large")
 
 with col1:
-    st.markdown('<div class="button-container">', unsafe_allow_html=True)
-    st.page_link("main.py", label="🏠 Main", icon=None, use_container_width=True)
-    st.markdown('</div>', unsafe_allow_html=True)
+    if st.button("🏠 Main", use_container_width=True):
+        st.switch_page("main.py")
 
 with col2:
-    if st.button("💻 Code", key="code", help="View coding projects", use_container_width=True):
+    if st.button("💻 Code", use_container_width=True):
         st.switch_page("pages/1_Coding.py")
 
 with col3:
-    if st.button("🎨 Art", key="art", help="View artwork gallery", use_container_width=True):
+    if st.button("🎨 Art", use_container_width=True):
         st.switch_page("pages/2_Art.py")
 
 with col4:
+    if st.button("🙋 About Me", use_container_width=True):
+        st.switch_page("pages/3_About_Me.py")
+
     if st.button("🙋 About Me", key="about", help="Learn about me", use_container_width=True):
         st.switch_page("pages/3_About_Me.py")
+
