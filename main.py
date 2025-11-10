@@ -26,7 +26,7 @@ h1, h2, h3, h4, h5, h6, p, li, div, span {
 }
 a {
     color: #00BFFF !important;
-    text-decoration: none;
+    text-decoration: none !important;
 }
 a:hover {
     color: #1E90FF !important;
@@ -40,9 +40,9 @@ a:hover {
 }
 .image-button {
     background-color: #111111;
-    border: 4px solid #00BFFF; /* thicker border */
+    border: 4px solid #00BFFF; /* Thicker border */
     border-radius: 20px;
-    padding: 25px;
+    padding: 40px 30px;
     width: 230px;
     transition: 0.3s;
     text-align: center;
@@ -50,17 +50,13 @@ a:hover {
 .image-button:hover {
     transform: scale(1.07);
     background-color: #1a1a1a;
-    border-color: #FF4500; /* hover color = orange/red glow */
+    border-color: #FF4500; /* Orange glow */
     box-shadow: 0 0 20px #FF4500;
 }
-.image-button img {
-    width: 150px;
-    height: 150px;
-    object-fit: contain;
-    border-radius: 15px;
-}
 .image-button h3 {
-    margin-top: 10px;
+    margin: 0;
+    font-size: 1.6rem;
+    font-weight: 700;
     color: white;
 }
 </style>
@@ -71,41 +67,42 @@ st.title("🎨 Adam Conroy | Creative Coder & Artist")
 st.subheader("Welcome to my interactive portfolio built with Streamlit!")
 st.write(
     """
-    Explore my **coding projects**, **artwork**, and learn more **about me** using the image buttons below.  
+    Explore my **coding projects**, **artwork**, and learn more **about me** using the buttons below.  
     This portfolio showcases my passion for blending creativity and technology.
     """
 )
 
-# --- IMAGE BUTTONS (no duplicate text) ---
+# --- EMOJI BUTTONS (no images) ---
 st.markdown(
 """<div class="button-container">
+
 <div class="image-button">
   <a href="/" target="_self">
-    <img src="images/main.png">
     <h3>🏠 Main</h3>
   </a>
 </div>
+
 <div class="image-button">
   <a href="1_Coding" target="_self">
-    <img src="images/code.png">
     <h3>💻 Code</h3>
   </a>
 </div>
+
 <div class="image-button">
   <a href="2_Art" target="_self">
-    <img src="images/art.png">
     <h3>🎨 Art</h3>
   </a>
 </div>
+
 <div class="image-button">
   <a href="3_About_Me" target="_self">
-    <img src="images/about.png">
-    <h3>🙋 About</h3>
+    <h3>🙋 About Me</h3>
   </a>
 </div>
+
 </div>""",
 unsafe_allow_html=True
 )
 
 st.divider()
-st.info("💡 Hover over any image button to see the glowing border effect!")
+st.info("💡 Hover over any button to see the glowing border effect!")
