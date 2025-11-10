@@ -9,6 +9,7 @@ body {
     background-color: #000000;
     color: white;
     text-align: center;
+    font-family: 'Segoe UI', sans-serif;
 }
 [data-testid="stAppViewContainer"] {
     background-color: #000000;
@@ -35,27 +36,30 @@ a:hover {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 40px;
+    gap: 30px;
     margin-top: 60px;
 }
 .image-button {
     background-color: #111111;
-    border: 4px solid #00BFFF; /* Thicker border */
-    border-radius: 20px;
-    padding: 40px 30px;
-    width: 230px;
+    border: 3px solid #00BFFF;
+    border-radius: 25px;
+    width: 150px;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     transition: 0.3s;
-    text-align: center;
+    box-shadow: 0 0 10px rgba(0,191,255,0.2);
 }
 .image-button:hover {
-    transform: scale(1.07);
+    transform: scale(1.1);
+    border-color: #FF4500;
+    box-shadow: 0 0 25px #FF4500;
     background-color: #1a1a1a;
-    border-color: #FF4500; /* Orange glow */
-    box-shadow: 0 0 20px #FF4500;
 }
 .image-button h3 {
     margin: 0;
-    font-size: 1.6rem;
+    font-size: 1.3rem;
     font-weight: 700;
     color: white;
 }
@@ -72,7 +76,7 @@ st.write(
     """
 )
 
-# --- EMOJI BUTTONS (no images) ---
+# --- SMALL EMOJI BUTTONS ---
 st.markdown(
 """<div class="button-container">
 
@@ -106,3 +110,4 @@ unsafe_allow_html=True
 
 st.divider()
 st.info("💡 Hover over any button to see the glowing border effect!")
+
