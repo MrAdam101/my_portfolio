@@ -24,9 +24,6 @@ h1, h2, h3, h4, h5, h6, p, li, div, span {
     color: white !important;
     text-align: center !important;
 }
-a {
-    text-decoration: none !important;
-}
 
 /* --- BUTTON CONTAINER --- */
 .button-container {
@@ -38,30 +35,25 @@ a {
 }
 
 /* --- BUTTON STYLE --- */
-.image-button {
-    background: linear-gradient(180deg, #56CCF2, #2F80ED);  /* light-blue glossy gradient */
+.glow-button {
+    background: linear-gradient(180deg, #56CCF2, #2F80ED);
     border: none;
     border-radius: 40px;
     padding: 18px 45px;
     color: white;
     font-size: 1.3rem;
     font-weight: 700;
-    display: flex;
+    display: inline-flex;
     align-items: center;
     justify-content: center;
     box-shadow: 0 5px 20px rgba(0, 191, 255, 0.3);
     transition: all 0.3s ease-in-out;
+    cursor: pointer;
 }
-.image-button:hover {
+.glow-button:hover {
     background: linear-gradient(180deg, #2F80ED, #1B6FF0);
     box-shadow: 0 0 25px rgba(0,191,255,0.8);
     transform: scale(1.08);
-}
-.image-button h3 {
-    margin: 0;
-    font-size: 1.3rem;
-    color: white;
-    font-weight: 700;
 }
 </style>
 """, unsafe_allow_html=True)
@@ -76,28 +68,22 @@ st.write(
     """
 )
 
-# --- BUTTONS ---
-st.markdown("""
-<div class="button-container">
+# --- BUTTON LAYOUT (REAL STREAMLIT NAVIGATION) ---
+col1, col2, col3, col4 = st.columns(4, gap="large")
 
-<a href="/" target="_self" class="image-button">
-  <h3>🏠 Main</h3>
-</a>
+with col1:
+    st.markdown('<div class="button-container">', unsafe_allow_html=True)
+    st.page_link("main.py", label="🏠 Main", icon=None, use_container_width=True)
+    st.markdown('</div>', unsafe_allow_html=True)
 
-<a href="1_Coding" target="_self" class="image-button">
-  <h3>💻 Code</h3>
-</a>
+with col2:
+    if st.button("💻 Code", key="code", help="View coding projects", use_container_width=True):
+        st.switch_page("pages/1_Coding.py")
 
-<a href="2_Art" target="_self" class="image-button">
-  <h3>🎨 Art</h3>
-</a>
+with col3:
+    if st.button("🎨 Art", key="art", help="View artwork gallery", use_container_width=True):
+        st.switch_page("pages/2_Art.py")
 
-<a href="3_About_Me" target="_self" class="image-button">
-  <h3>🙋 About Me</h3>
-</a>
-
-</div>
-""", unsafe_allow_html=True)
-
-st.divider()
-st.info("💡 Hover over the buttons to see the glowing blue effect!")
+with col4:
+    if st.button("🙋 About Me", key="about", help="Learn about me", use_container_width=True):
+        st.switch_page("pages/3_About_Me.py")
