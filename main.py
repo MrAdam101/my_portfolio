@@ -1,5 +1,4 @@
 import streamlit as st
-from PIL import Image
 
 st.set_page_config(page_title="Adam Conroy | Portfolio", page_icon="🎨", layout="wide")
 
@@ -32,26 +31,36 @@ st.markdown("""
     a:hover {
         color: #1E90FF !important;
     }
-    .box-container {
+    .button-container {
         display: flex;
         justify-content: center;
         flex-wrap: wrap;
-        gap: 30px;
-        margin-top: 50px;
+        gap: 40px;
+        margin-top: 60px;
     }
-    .box {
+    .image-button {
         background-color: #111111;
         border: 2px solid #00BFFF;
-        border-radius: 15px;
-        padding: 30px 40px;
-        width: 250px;
-        text-align: center;
+        border-radius: 20px;
+        padding: 20px;
+        width: 220px;
         transition: 0.3s;
+        text-align: center;
     }
-    .box:hover {
+    .image-button:hover {
         transform: scale(1.05);
         background-color: #1a1a1a;
         border-color: #1E90FF;
+    }
+    .image-button img {
+        width: 150px;
+        height: 150px;
+        object-fit: contain;
+        border-radius: 15px;
+    }
+    .image-button h3 {
+        margin-top: 10px;
+        color: white;
     }
     </style>
 """, unsafe_allow_html=True)
@@ -59,52 +68,48 @@ st.markdown("""
 # --- HEADER ---
 st.title("🎨 Adam Conroy | Creative Coder & Artist")
 st.subheader("Welcome to my interactive portfolio built with Streamlit!")
-st.write(
-    """
-    Explore my **coding projects**, **artwork**, and learn more **about me** using the sidebar.  
-    This portfolio showcases my passion for blending creativity and technology.
-    """
-)
 
-# --- CLICKABLE BOXES (rendered properly) ---
-st.markdown(
-    """
-    <div class="box-container">
-        <div class="box">
-            <a href="/" target="_self">
-                <h3>🏠 Main</h3>
-                <p>Return to the main landing page.</p>
-            </a>
-        </div>
-        <div class="box">
-            <a href="1_Coding" target="_self">
-                <h3>💻 Code</h3>
-                <p>Explore my coding projects and apps.</p>
-            </a>
-        </div>
-        <div class="box">
-            <a href="2_Art" target="_self">
-                <h3>🎨 Artwork</h3>
-                <p>View my digital and AI artwork gallery.</p>
-            </a>
-        </div>
-        <div class="box">
-            <a href="3_About_Me" target="_self">
-                <h3>🙋 About Me</h3>
-                <p>Learn more about who I am and what I do.</p>
-            </a>
-        </div>
+# --- IMAGE BUTTONS ---
+st.markdown("""
+<div class="button-container">
+    <div class="image-button">
+        <a href="/" target="_self">
+            <img src="images/main.png" alt="Main Button">
+            <h3>🏠 Main</h3>
+        </a>
     </div>
-    """,
-    unsafe_allow_html=True
-)
+
+    <div class="image-button">
+        <a href="1_Coding" target="_self">
+            <img src="images/code.png" alt="Code Button">
+            <h3>💻 Code</h3>
+        </a>
+    </div>
+
+    <div class="image-button">
+        <a href="2_Art" target="_self">
+            <img src="images/art.png" alt="Art Button">
+            <h3>🎨 Art</h3>
+        </a>
+    </div>
+
+    <div class="image-button">
+        <a href="3_About_Me" target="_self">
+            <img src="images/about.png" alt="About Button">
+            <h3>🙋 About</h3>
+        </a>
+    </div>
+</div>
+""", unsafe_allow_html=True)
 
 st.divider()
-st.info("💡 Tip: Use the sidebar or the boxes above to navigate between pages!")
+st.info("💡 Click an image button above to explore different sections of my portfolio!")
+
 
 
          
     
 
   
+
 
