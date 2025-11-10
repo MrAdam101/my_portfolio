@@ -1,73 +1,71 @@
 import streamlit as st
+from PIL import Image
 
-# -------------------- PAGE CONFIG --------------------
-st.set_page_config(
-    page_title="Adam Conroy | Portfolio",
-    page_icon="🌐",
-    layout="centered"
+st.set_page_config(page_title="Adam Conroy | Portfolio", page_icon="🎨", layout="wide")
+
+# --- DARK THEME STYLING ---
+st.markdown("""
+    <style>
+    body {
+        background-color: #000000;
+        color: white;
+    }
+    [data-testid="stAppViewContainer"] {
+        background-color: #000000;
+        color: white;
+    }
+    [data-testid="stHeader"] {
+        background: none;
+    }
+    [data-testid="stSidebar"] {
+        background-color: #111111;
+    }
+    h1, h2, h3, h4, h5, h6, p, li, div, span {
+        color: white !important;
+    }
+    a {
+        color: #00BFFF !important;
+        text-decoration: none;
+    }
+    a:hover {
+        color: #1E90FF !important;
+    }
+    </style>
+""", unsafe_allow_html=True)
+
+# --- HEADER ---
+st.title("🎨 Adam Conroy | Creative Coder & Artist")
+st.subheader("Welcome to my interactive portfolio built with Streamlit!")
+st.write(
+    """
+    Explore my **coding projects**, **artwork**, and learn more **about me** using the sidebar.  
+    This portfolio showcases my passion for blending creativity and technology.
+    """
 )
 
-# -------------------- NAVIGATION BAR FUNCTION --------------------
-def top_navbar():
-    st.markdown("""
-        <style>
-            .nav-buttons {
-                display: flex;
-                justify-content: center;
-                gap: 1rem;
-                margin-bottom: 2rem;
-            }
-            .stButton button {
-                background-color: #2E86C1;
-                color: white;
-                border-radius: 8px;
-                font-size: 16px;
-                padding: 0.5em 1em;
-                border: none;
-                transition: 0.3s;
-            }
-            .stButton button:hover {
-                background-color: #1B4F72;
-                color: #f1f1f1;
-                transform: scale(1.05);
-            }
-        </style>
-    """, unsafe_allow_html=True)
+# --- FEATURED SECTIONS ---
+col1, col2 = st.columns(2, gap="large")
 
-    st.markdown('<div class="nav-buttons">', unsafe_allow_html=True)
-    col1, col2, col3, col4 = st.columns(4)
+with col1:
+    st.header("💻 Coding Projects")
+    st.write(
+        """
+        Dive into my latest **Python** and **Streamlit** creations — 
+        from automation tools to AI-powered web apps.
+        """
+    )
+    st.page_link("pages/1_Coding.py", label="See My Code", icon="🧠")
 
-    with col1:
-        if st.button("🏠 Home"):
-            st.experimental_rerun()
+with col2:
+    st.header("🎨 Artwork")
+    st.write(
+        """
+        A showcase of my **digital art**, **MidJourney illustrations**, 
+        and other creative designs made with AI and hand-crafted detail.
+        """
+    )
+    st.page_link("pages/2_Art.py", label="View My Art Gallery", icon="🖼️")
 
-    with col2:
-        if st.button("💻 Coding"):
-            st.switch_page("pages/1_Coding")
+st.divider()
+st.info("💡 Tip: Use the sidebar to navigate between pages!")
 
-    with col3:
-        if st.button("🎨 Art"):
-            st.switch_page("pages/2_Art")
-
-    with col4:
-        if st.button("🙋‍♂️ About Me"):
-            st.switch_page("pages/3_About_Me")
-
-    st.markdown('</div>', unsafe_allow_html=True)
-
-# -------------------- MAIN CONTENT --------------------
-top_navbar()
-
-st.markdown("""
-<h1 style='text-align:center; color:#2E86C1;'>Welcome to My Portfolio 🌟</h1>
-<p style='text-align:center; font-size:20px; color:#555;'>A blend of Creativity 🎨 + Code 💻</p>
-""", unsafe_allow_html=True)
-
-st.markdown("""
-<div style='text-align:center; font-size:18px; color:#333; margin-top:30px;'>
-I'm <b>Adam Conroy</b> — a coder, artist, and creator living in South Korea 🇰🇷.<br>
-I build creative digital tools and art that bridge imagination with technology.<br><br>
-✨ Explore my projects, art, and story using the buttons above or the sidebar.<br>
-Let's create something amazing together!
-</div>
-""", unsafe_allow_html=True)
