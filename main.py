@@ -76,30 +76,30 @@ st.write(
     """
 )
 
-# --- IMAGE BUTTONS ---
+# --- IMAGE BUTTONS (no duplicate text) ---
 st.markdown(
 """<div class="button-container">
 <div class="image-button">
   <a href="/" target="_self">
-    <img src="images/main.png" alt="Main Button">
+    <img src="images/main.png">
     <h3>🏠 Main</h3>
   </a>
 </div>
 <div class="image-button">
   <a href="1_Coding" target="_self">
-    <img src="images/code.png" alt="Code Button">
+    <img src="images/code.png">
     <h3>💻 Code</h3>
   </a>
 </div>
 <div class="image-button">
   <a href="2_Art" target="_self">
-    <img src="images/art.png" alt="Art Button">
+    <img src="images/art.png">
     <h3>🎨 Art</h3>
   </a>
 </div>
 <div class="image-button">
   <a href="3_About_Me" target="_self">
-    <img src="images/about.png" alt="About Button">
+    <img src="images/about.png">
     <h3>🙋 About</h3>
   </a>
 </div>
