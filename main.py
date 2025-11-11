@@ -2,7 +2,7 @@ import streamlit as st
 
 st.set_page_config(page_title="Adam Conroy | Portfolio", page_icon="🎨", layout="wide")
 
-# --- HIDE STREAMLIT DEFAULT SIDEBAR AND MENU ---
+# --- HIDE SIDEBAR ---
 st.markdown("""
     <style>
         [data-testid="stSidebar"] {visibility: hidden;}
@@ -12,20 +12,21 @@ st.markdown("""
     </style>
 """, unsafe_allow_html=True)
 
-# --- STYLING ---
+# --- BLUE THEME STYLING ---
 st.markdown("""
 <style>
 body {
-    background-color: #000000;
-    color: white;
+    background-color: #B3E5FC; /* Fresh light blue */
+    color: black;
     text-align: center;
     font-family: 'Segoe UI', sans-serif;
 }
 [data-testid="stAppViewContainer"] {
-    background-color: #000000;
+    background-color: #B3E5FC;
+    color: black;
 }
 h1, h2, h3, h4, h5, h6, p, li, div, span {
-    color: white !important;
+    color: black !important;
     text-align: center !important;
 }
 .button-container {
@@ -33,10 +34,10 @@ h1, h2, h3, h4, h5, h6, p, li, div, span {
     justify-content: center;
     flex-wrap: wrap;
     gap: 35px;
-    margin-top: 60px;
+    margin-top: 50px;
 }
 .glow-button {
-    background: linear-gradient(180deg, #56CCF2, #2F80ED);
+    background: linear-gradient(180deg, #2196F3, #1976D2);
     border: none;
     border-radius: 40px;
     padding: 18px 45px;
@@ -46,33 +47,32 @@ h1, h2, h3, h4, h5, h6, p, li, div, span {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 5px 20px rgba(0, 191, 255, 0.3);
+    box-shadow: 0 5px 20px rgba(25, 118, 210, 0.4);
     transition: all 0.3s ease-in-out;
     cursor: pointer;
 }
 .glow-button:hover {
-    background: linear-gradient(180deg, #2F80ED, #1B6FF0);
-    box-shadow: 0 0 25px rgba(0,191,255,0.8);
+    background: linear-gradient(180deg, #1976D2, #0D47A1);
+    box-shadow: 0 0 25px rgba(25, 118, 210, 0.9);
     transform: scale(1.08);
 }
 </style>
 """, unsafe_allow_html=True)
 
 # --- HEADER ---
-st.title("🎨 Adam Conroy | Creative Coder & Artist Portfolio")
-st.subheader("Welcome to my interactive portfolio built with code and to show case my coding skills along with my art work")
-st.write(
-    """
-    Explore my coding projects, artwork, and learn more about me.  
-    This portfolio showcases my passion for blending creativity and technology. 
-    """
-)
+st.markdown("<h1>🎨 Adam Conroy | Creative Coder & Artist Portfolio</h1>", unsafe_allow_html=True)
+st.markdown("""
+<h3>Welcome to my interactive portfolio built with code and creativity — 
+showcasing my coding skills along with my artwork.</h3>
+<p>Explore my <b>coding projects</b>, <b>artwork</b>, and learn more <b>about me</b>.</p>
+<p>This portfolio represents my passion for blending technology and design.</p>
+""", unsafe_allow_html=True)
 
 # --- NAVIGATION BUTTONS ---
 col1, col2, col3, col4 = st.columns(4, gap="large")
 
 with col1:
-    st.button("🏠 Main", use_container_width=True)
+    st.markdown('<button class="glow-button">🏠 Main</button>', unsafe_allow_html=True)
 
 with col2:
     if st.button("💻 Code", use_container_width=True):
@@ -85,4 +85,3 @@ with col3:
 with col4:
     if st.button("🙋 About Me", use_container_width=True):
         st.switch_page("pages/3_About_Me.py")
-
