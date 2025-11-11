@@ -59,12 +59,12 @@ h1, h2, h3, h4, h5, h6, p, li, div, span {
 """, unsafe_allow_html=True)
 
 # --- HEADER ---
-st.title("🎨 Adam Conroy | Creative Coder & Artist")
-st.subheader("Welcome to my interactive portfolio built with Streamlit!")
+st.title("🎨 Adam Conroy | Creative Coder & Artist Portfolio")
+st.subheader("Welcome to my interactive portfolio built with code and to show case my coding skills along with my art work")
 st.write(
     """
-    Explore my **coding projects**, **artwork**, and learn more **about me** using the buttons below.  
-    This portfolio showcases my passion for blending creativity and technology.
+    Explore my coding projects, artwork, and learn more about me.  
+    This portfolio showcases my passion for blending creativity and technology. 
     """
 )
 
@@ -85,3 +85,4 @@ with col3:
 with col4:
     if st.button("🙋 About Me", use_container_width=True):
         st.switch_page("pages/3_About_Me.py")
+
