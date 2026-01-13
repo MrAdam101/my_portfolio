@@ -71,8 +71,9 @@ st.markdown("""
 st.markdown("""
 <div class="button-container">
     <a href="/" target="_self" class="glow-button">🏠 Main</a>
-    <a href="/1_Coding" target="_self" class="glow-button">💻 Code</a>
+    <a href="/1_Coding projects" target="_self" class="glow-button">💻 Code</a>
     <a href="/2_Art" target="_self" class="glow-button">🎨 Art</a>
     <a href="/3_About_Me" target="_self" class="glow-button">🙋 About Me</a>
 </div>
 """, unsafe_allow_html=True)
+
